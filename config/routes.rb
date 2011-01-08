@@ -1,4 +1,22 @@
 WaznooDeals::Application.routes.draw do
+  get "pages/home"
+
+  get "pages/coupons"
+
+  get "pages/events"
+
+  get "pages/philosophy"
+
+  get "pages/how_it_works"
+
+  get "pages/past_deals"
+
+  get "pages/support_customers"
+
+  get "pages/support_businesses"
+
+  get "pages/subscribe"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
