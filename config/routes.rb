@@ -9,7 +9,7 @@ WaznooDeals::Application.routes.draw do
 
   get "pages/how_it_works"
 
-  get "pages/past_deals"
+  get "pages/previous_deals"
 
   get "pages/support_customers"
 
