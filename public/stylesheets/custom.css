@@ -1,6 +1,10 @@
 .container {
   width: 710px;
+  border: 2px solid red;
 }
+
+
+
 
 body {
   background: #cff;
@@ -8,6 +12,7 @@ body {
 
 header {
   padding-top: 20px;
+  border: 3px solid green;
 }
 
 header img {
@@ -16,6 +21,7 @@ header img {
 }
 
 section {
+  border: 2px solid blue;
   margin-top: 1em;
   font-size: 120%;
   padding: 20px;
@@ -48,12 +54,11 @@ a:visited {
 
 /* Navigation */
 
-nav {
-  float: right;
-}
 
 nav {
-  background-color: white;
+  border: 2px black; 
+  float: right;
+  background-color:white;
   padding: 0 0.7em;
   white-space: nowrap;
 }
@@ -61,12 +66,14 @@ nav {
 nav ul {
   margin: 0;
   padding: 0;
+  border-right: 1px gray;
 }
 
 nav ul li {
   list-style-type: none;
   display: inline-block;
   padding: 0.2em 0;
+  
 }
 
 nav ul li a {
@@ -79,6 +86,35 @@ nav ul li a:visited {
 }
 
 nav ul li a:hover {
+  text-decoration: underline;
+}
+/* Sidebar */
+
+sidebar {
+ float: right;
+ }
+ 
+sidebar ul {
+  margin: 0;
+  padding: 0;
+}
+
+sidebar ul li {
+  list-style-type: none;
+  display: block;
+  padding: 0.2em 0;
+}
+
+sidebar ul li a {
+  padding: 0 5px;
+  font-weight: bold;
+}
+
+sidebar ul li a:visited {
+  color: #09c;
+}
+
+sidebar ul li a:hover {
   text-decoration: underline;
 }
 
@@ -111,6 +147,7 @@ footer {
   width: 710px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
 }
 
 footer nav {
@@ -245,5 +282,4 @@ form.new_micropost textarea {
   height: 4em;
   margin-bottom: 0;
 }
-
 
