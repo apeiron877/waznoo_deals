@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   def coupons
 	@title = "Coupons"
   end
-
+    
   def events
 	@title = "Events"
   end

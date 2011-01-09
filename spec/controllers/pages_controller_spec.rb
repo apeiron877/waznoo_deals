@@ -110,6 +110,7 @@ describe PagesController do
 				:content => "WaznooDeals! | Subscribe!")
     end
   end
-  
+
+
 
 end

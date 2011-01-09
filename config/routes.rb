@@ -1,21 +1,18 @@
 WaznooDeals::Application.routes.draw do
-  get "pages/home"
 
-  get "pages/coupons"
+  
+  get "users/new"
 
-  get "pages/events"
-
-  get "pages/philosophy"
-
-  get "pages/how_it_works"
-
-  get "pages/previous_deals"
-
-  get "pages/support_customers"
-
-  get "pages/support_businesses"
-
-  get "pages/subscribe"
+  root :to => 'pages#home'
+  match '/coupons', :to => 'pages#coupons'
+  match '/events', :to => 'pages#events'
+  match '/philosophy', :to => 'pages#philosophy'
+  match '/how_it_works', :to => 'pages#how_it_works'
+  match '/previous_deals', :to => 'pages#previous_deals'
+  match '/support_customers', :to => 'pages#support_customers'
+  match '/support_businesses', :to => 'pages#support_businesses'
+  match '/subscribe', :to => 'pages#subscribe'
+  match '/signup',  :to => 'users#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
