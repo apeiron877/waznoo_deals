@@ -4,7 +4,6 @@ WaznooDeals::Application.routes.draw do
   
 
   root :to => 'pages#home'
-  devise_for :users
 
   
   match "/coupons", :to => "pages#coupons"
