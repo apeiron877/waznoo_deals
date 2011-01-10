@@ -1,6 +1,8 @@
 .container {
   width: 710px;
   border: 2px solid red;
+  #background-image: url('/images/rails.png');
+   background-color: purple;
 }
 
 
@@ -11,17 +13,17 @@ body {
 }
 
 header {
-  padding-top: 20px;
-  border: 3px solid green;
+  padding-top: 0px;
+  border: 1px solid green;
 }
 
 header img {
-  padding: 1em;
+  padding: 0em;
   background: #fff;
 }
 
 section {
-  border: 2px solid blue;
+  /*border: 2px solid blue;*/
   margin-top: 1em;
   font-size: 120%;
   padding: 20px;
@@ -59,34 +61,46 @@ nav {
   border: 2px black; 
   float: right;
   background-color:white;
-  padding: 0 0.7em;
+  padding: 0 em;
   white-space: nowrap;
+  border-right: 1px gray;
+ 
 }
 
 nav ul {
   margin: 0;
   padding: 0;
   border-right: 1px gray;
+  font-color: black;
+  
 }
 
 nav ul li {
+  background-image: url('/images/navbar.png');
+  width: 125px;
   list-style-type: none;
   display: inline-block;
   padding: 0.2em 0;
+  text-align: center;
+  
   
 }
 
 nav ul li a {
-  padding: 0 5px;
+  padding: 0 20px;
+  font-size: 150%;
   font-weight: bold;
+  color: black;
 }
 
 nav ul li a:visited {
-  color: #09c;
+  color: black;
 }
 
 nav ul li a:hover {
+  width: 125px;
   text-decoration: underline;
+  /*background-image: url('/images/navbar-mouseover.png');*/
 }
 /* Sidebar */
 
@@ -151,7 +165,12 @@ footer {
 }
 
 footer nav {
-  float: none;
+  float: none; 
+}
+
+footer nav ul li {
+  background-image: none;
+  width: 75px;
 }
 
 /* User show page */

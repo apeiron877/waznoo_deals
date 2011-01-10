@@ -6,13 +6,11 @@ describe "LayoutLinks" do
     get '/'
     response.should have_selector('title', :content => "Home")
   end
-
   it "should have a Coupons page at '/coupons'" do
     get '/coupons'
     response.should have_selector('title', :content => "Coupons")
   end
-
-  it "should have an events page at '/events'" do
+  it "should have an Events page at '/events'" do
     get '/events'
     response.should have_selector('title', :content => "Events")
   end

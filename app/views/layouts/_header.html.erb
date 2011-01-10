@@ -1,13 +1,13 @@
 <header>
-  <nav class="round">
+  <% logo = image_tag("logo-cropped.png", :alt => "WaznooDeals!") %>
+  <%= link_to logo, root_path %>
+  <nav class=>
     <ul>
-		<li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Coupons", coupons_path %></li>
-        <li><%= link_to "Events", events_path %></li>
-        <li><%= link_to "Sign in", '#' %></li>
+		<li><%= link_to "HOME", root_path %></li>
+        <li><%= link_to "COUPONS", coupons_path %></li>
+        <li><%= link_to "EVENTS", events_path %></li>
+        <li><%= link_to "SIGN IN", '#' %></li>
     </ul>
   </nav>
-  <% logo = image_tag("logo-cropped.png", :alt => "WaznooDeals!", :class => "round") %>
-  <%= link_to logo, root_path %>
+  
 </header>
-

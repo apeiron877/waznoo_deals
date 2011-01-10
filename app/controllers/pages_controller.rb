@@ -10,7 +10,7 @@ class PagesController < ApplicationController
   def events
 	@title = "Events"
   end
-
+  
   def philosophy
 	@title = "Our Philosophy"
   end

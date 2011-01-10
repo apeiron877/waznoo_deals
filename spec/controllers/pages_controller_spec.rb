@@ -14,7 +14,7 @@ describe PagesController do
 				:content => "WaznooDeals! | Home")
     end
   end
-
+ 
   describe "GET 'coupons'" do
     it "should be successful" do
       get 'coupons'
