@@ -9,6 +9,8 @@
     <div class="container">
       <%= render 'layouts/header' %>
       <section class="round">	
+			<p class="notice"><%= notice %></p>
+			<p class="alert"><%= alert %></p>
 			<%= render 'layouts/sidenav' %>
 			<%= yield %>
       </section>

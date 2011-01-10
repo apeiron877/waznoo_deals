@@ -9,21 +9,34 @@ indent_mode=2
 [project]
 name=waznoo_deals
 base_path=/home/dominick/rails_projects/waznoo_deals
+description=
 
 [long line marker]
 long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=10
-FILE_NAME_0=0;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/pages/coupons.html.erb;0
-FILE_NAME_1=0;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/pages/events.html.erb;0
-FILE_NAME_2=0;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/pages/home.html.erb;0
-FILE_NAME_3=0;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/pages/how_it_works.html.erb;0
-FILE_NAME_4=0;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/pages/past_deals.html.erb;0
-FILE_NAME_5=0;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/pages/philosophy.html.erb;0
-FILE_NAME_6=0;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/pages/subscribe.html.erb;0
-FILE_NAME_7=0;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/pages/support_businesses.html.erb;0
-FILE_NAME_8=0;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/pages/support_customers.html.erb;0
-FILE_NAME_9=128;Ruby;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/controllers/pages_controller.rb;0
-FILE_NAME_10=1292;Ruby;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/spec/controllers/pages_controller_spec.rb;0
+current_page=22
+FILE_NAME_0=30;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/pages/coupons.html.erb;0
+FILE_NAME_1=39;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/pages/events.html.erb;0
+FILE_NAME_2=251;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/pages/home.html.erb;0
+FILE_NAME_3=74;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/pages/how_it_works.html.erb;0
+FILE_NAME_4=29;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/pages/previous_deals.html.erb;0
+FILE_NAME_5=27;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/pages/philosophy.html.erb;0
+FILE_NAME_6=25;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/pages/subscribe.html.erb;0
+FILE_NAME_7=49;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/pages/support_businesses.html.erb;0
+FILE_NAME_8=31;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/pages/support_customers.html.erb;0
+FILE_NAME_9=125;Ruby;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/controllers/pages_controller.rb;0
+FILE_NAME_10=546;Ruby;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/config/routes.rb;0
+FILE_NAME_11=294;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/layouts/application.html.erb;0
+FILE_NAME_12=29;Ruby;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/helpers/application_helper.rb;0
+FILE_NAME_13=643;CSS;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/public/stylesheets/custom.css;0
+FILE_NAME_14=364;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/layouts/_stylesheets.html.erb;0
+FILE_NAME_15=380;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/layouts/_header.html.erb;0
+FILE_NAME_16=1;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/layouts/_footer.html.erb;0
+FILE_NAME_17=439;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/layouts/_sidenav.html.erb;0
+FILE_NAME_18=457;Ruby;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/spec/requests/layout_links_spec.rb;0
+FILE_NAME_19=0;Ruby;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/spec/controllers/pages_controller_spec.rb;0
+FILE_NAME_20=326;Ruby;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/spec/controllers/users_controller_spec.rb;0
+FILE_NAME_21=83;Ruby;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/controllers/users_controller.rb;0
+FILE_NAME_22=66;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/users/new.html.erb;0

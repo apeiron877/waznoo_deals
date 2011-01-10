@@ -1,18 +1,18 @@
 WaznooDeals::Application.routes.draw do
 
-  
-  get "users/new"
-
   root :to => 'pages#home'
-  match '/coupons', :to => 'pages#coupons'
-  match '/events', :to => 'pages#events'
-  match '/philosophy', :to => 'pages#philosophy'
+  devise_for :users
+
+  
+  match "/coupons", :to => "pages#coupons"
+  match "/events", :to => "pages#events"
+  match "/philosophy", :to => 'pages#philosophy'
   match '/how_it_works', :to => 'pages#how_it_works'
   match '/previous_deals', :to => 'pages#previous_deals'
   match '/support_customers', :to => 'pages#support_customers'
   match '/support_businesses', :to => 'pages#support_businesses'
   match '/subscribe', :to => 'pages#subscribe'
-  match '/signup',  :to => 'users#new'
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

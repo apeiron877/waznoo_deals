@@ -4,7 +4,14 @@
 		<li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Coupons", coupons_path %></li>
         <li><%= link_to "Events", events_path %></li>
-        <li><%= link_to "Sign in", '#' %></li>
+        <div id="user_nav">
+			<% if user_signed_in? %>
+				Signed in as <%= current_user.email %>. Not you?
+				<%= link_to "Sign out", destroy_user_session_path %>
+			<% else %>
+				<%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+			<% end %>
+</div>
     </ul>
   </nav>
   <% logo = image_tag("logo-cropped.png", :alt => "WaznooDeals!", :class => "round") %>
