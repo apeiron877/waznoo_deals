@@ -1,5 +1,9 @@
 require 'rubygems'
 require 'spork'
+require 'factory_girl'
+require File.dirname(__FILE__) + "/factories"
+
+
 
 Spork.prefork do
   # Loading more in this block will cause your tests to run faster. However, 

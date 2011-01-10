@@ -2,7 +2,7 @@
   width: 710px;
   border: 2px solid red;
   #background-image: url('/images/rails.png');
-   background-color: purple;
+   background-color: darkblue;
 }
 
 
@@ -24,6 +24,7 @@ header img {
 
 section {
   /*border: 2px solid blue;*/
+  height: 425px;
   margin-top: 1em;
   font-size: 120%;
   padding: 20px;
@@ -88,7 +89,7 @@ nav ul li {
 
 nav ul li a {
   padding: 0 20px;
-  font-size: 150%;
+  font-size: 145%;
   font-weight: bold;
   color: black;
 }
@@ -157,11 +158,12 @@ a.signup_button {
 
 footer {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 40px;
   width: 710px;
   margin-left: auto;
   margin-right: auto;
-  position: relative;
+  font-size: 100%;
+  #position: relative;
 }
 
 footer nav {
@@ -169,6 +171,7 @@ footer nav {
 }
 
 footer nav ul li {
+  
   background-image: none;
   width: 75px;
 }
