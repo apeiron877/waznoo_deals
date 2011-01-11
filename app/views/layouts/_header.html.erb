@@ -3,10 +3,17 @@
   <%= link_to logo, root_path %>
   <nav class=>
     <ul>
+    <% if !(signed_in?) %>
+        <li><%= link_to "SIGN UP!", signup_path %></li>
+    <% end %>
 		<li><%= link_to "HOME", root_path %></li>
         <li><%= link_to "COUPONS", coupons_path %></li>
         <li><%= link_to "EVENTS", events_path %></li>
-        <li><%= link_to "SIGN IN", '#' %></li>
+    <% if !(signed_in?) %>
+        <li><%= link_to "SIGN IN", signin_path %></li>
+    <% else %>  
+        <li><%= link_to "SIGN OUT", signout_path, :method => :delete %></li>
+    <% end %>
     </ul>
   </nav>
   
