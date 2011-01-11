@@ -1,10 +1,15 @@
 <header>
+  <% if (!current_user.nil?) and current_user.admin? %>
+		  <%= link_to "Admin Tools(Index)", users_path %>
+  <% end %>
   <% logo = image_tag("logo-cropped.png", :alt => "WaznooDeals!") %>
   <%= link_to logo, root_path %>
   <nav class=>
     <ul>
     <% if !(signed_in?) %>
         <li><%= link_to "SIGN UP!", signup_path %></li>
+    <% else %>
+		<li><%= link_to "My Settings", edit_user_path(current_user) %></li>
     <% end %>
 		<li><%= link_to "HOME", root_path %></li>
         <li><%= link_to "COUPONS", coupons_path %></li>
