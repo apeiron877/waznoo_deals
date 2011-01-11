@@ -1,15 +1,15 @@
-<% if target.errors.any? %>
-<% if @micropost.nil? %>
+<% if object.errors.any? %>
+<% if @deal.nil? %>
 <%	@name = "user" %>
 <% else %>
 <%	@name = "deal" %>
 <% end %>
   <div id="error_explanation">
-    <h2><%= pluralize(target.errors.count, "error") %> 
+    <h2><%= pluralize(object.errors.count, "error") %> 
         prohibited this <%= @name %> from being saved:</h2>
     <p>There were problems with the following fields:</p>
     <ul>
-    <% target.errors.full_messages.each do |msg| %>
+    <% object.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>

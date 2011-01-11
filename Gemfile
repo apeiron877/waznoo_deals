@@ -13,7 +13,7 @@ group :test do
   gem 'rspec', '2.3.0'
   gem 'webrat', '0.7.1'
   gem 'spork', '0.8.4'
-  gem 'factory_girl', :git => 'git://github.com/thoughtbot/factory_girl.git'
+  gem 'factory_girl', '1.3.2'
 
 
 end
