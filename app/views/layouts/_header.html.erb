@@ -1,25 +1,26 @@
-<header>
-  <% if (!current_user.nil?) and current_user.admin? %>
-		  <%= link_to "Admin Tools(Index)", users_path %>
-  <% end %>
-  <% logo = image_tag("logo-cropped.png", :alt => "WaznooDeals!") %>
+<% if (!current_user.nil?) and current_user.admin? %>
+   <%= link_to "Admin Tools(Index)", users_path %>
+<% end %>
+<div id="logo" class="span-10">
+  <!--<% logo = image_tag("logo400.png", :alt => "WaznooDeals!") %>
   <%= link_to logo, root_path %>
-  <nav class=>
-    <ul>
+  -->
+  <h1> WAZNOO DEALS!</h1>
+</div>
+<div id="top-buttons" class="span-13 last" >
+  <ul>
     <% if !(signed_in?) %>
-        <li><%= link_to "SIGN UP!", signup_path %></li>
+       <li><%= link_to "SIGN UP!", signup_path %></li>
     <% else %>
-		<li><%= link_to "My Settings", edit_user_path(current_user) %></li>
+       <li><%= link_to "My Settings", edit_user_path(current_user) %></li>
     <% end %>
-		<li><%= link_to "HOME", root_path %></li>
-        <li><%= link_to "COUPONS", coupons_path %></li>
-        <li><%= link_to "EVENTS", events_path %></li>
+      <li><%= link_to "HOME", root_path %></li>
+      <li><%= link_to "COUPONS", coupons_path %></li>
+      <li><%= link_to "EVENTS", events_path %></li>
     <% if !(signed_in?) %>
         <li><%= link_to "SIGN IN", signin_path %></li>
     <% else %>  
         <li><%= link_to "SIGN OUT", signout_path, :method => :delete %></li>
     <% end %>
-    </ul>
-  </nav>
-  
-</header>
+  </ul>
+</div>
