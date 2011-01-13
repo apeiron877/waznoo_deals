@@ -18,6 +18,8 @@ class DealsController < ApplicationController
   def create
 	@deal = Deal.new(params[:deal])
 	@deal.num_purchased = 0
+	
+		
 	if @deal.save
 	    flash[:success] = "Deal saved to database"
         redirect_to deals_path
@@ -32,6 +34,7 @@ class DealsController < ApplicationController
   def show
    # if params[:starting_date] == today(Time.new)
     @deal = Deal.find(params[:id])
+     @data_tables = ActiveRecord::Base.connection.tables
    # end
   end
 

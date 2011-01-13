@@ -1,6 +1,9 @@
 <% @deal = @deal || todays_deal %>
-<% if @deal.nil? %>
-	<% render 'no_deal' %>
+<% if @deal.nil? or @deal == 0 %>
+	<div>
+		<h2> No Deal Today </h2>
+		<h3> We're really really sorry </h3>
+		</div>
 <% else %>
   <h1><%= @deal.name %></h1>
 	<div id="datacol">

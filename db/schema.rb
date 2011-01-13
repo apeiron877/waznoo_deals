@@ -10,11 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110112065058) do
+ActiveRecord::Schema.define(:version => 20110113210134) do
 
   create_table "deals", :force => true do |t|
     t.string   "name"
-    t.integer  "starting_date"
+    t.string   "starting_date"
     t.integer  "days_available"
     t.integer  "price"
     t.integer  "value"

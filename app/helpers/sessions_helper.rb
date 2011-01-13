@@ -68,39 +68,43 @@ module SessionsHelper
   end
   
   def todays_deal
-	deal = Deal.find_by_starting_date(today)
-	#if deal.nil?  # this only happens if we don't use do a new deal every day.
+    date = Date.today
+	deal = Deal.find_by_starting_date(date_as_string(Date.today))
+    if deal.nil? or deal == 0  # this only happens if we don't use do a new deal every day.
 		#find the most recent deal that started before today
-		#date = today
-		#days_passed = 0
-		#while deal.nil?
-		#  date = previous_day(date) 
-		#  deal = Deal.find_by_starting_date(date) #See if there was a deal offered the day before today, before yesterday, etc
-		#  days_passed += 1 
-		#  if days_passed > 365
-		#	puts "major fuckup"  # there haven't been any deals for over a year...?
-		#	break
-		#  end
-		#end
-		#if deal.days_available < days_passed #the last deal is still active
-		#	return deal
-		#else
-	return deal
-	    #end
+		days_passed = 0
+		while deal.nil? or deal == 0 do
+		
+		  date = date.yesterday 
+		  deal = Deal.find_by_starting_date(date_as_string(date)) #See if there was a deal offered the day before today, before yesterday, etc
+		  days_passed += 1 
+		  if days_passed > 365
+			flash.now[:notice] = "there haven't been any deals for over a year...?"
+			break
+		  end
+		end
+		
+	    if deal.days_available < days_passed #the last deal is not still active
+		  flash.now[:error] = "Previous deal started: #{date} and ran for #{deal.days_available} days. So it's no longer available!"
+		  return nil
+		else
+	      flash.now[:success] = "Previous deal started: #{date} and runs for #{deal.days_available} days. So it's still available!"
+		  return deal
+	    end
+	  else
+	    return deal
+	end
   end
-  #end
 	
-	
-  def today
-	date = Time.new
-    if date.month > 10
-		if date.day > 10
+  def date_as_string(date)
+	if date.month > 9
+		if date.day > 9
 			return "#{date.month}/#{date.day}/#{date.year}"
 		else
 			return "#{date.month}/0#{date.day}/#{date.year}"
 		end
 	else
-		if date.day > 10
+		if date.day > 9
 			return "0#{date.month}/#{date.day}/#{date.year}"
 		else
 			return "0#{date.month}/0#{date.day}/#{date.year}"

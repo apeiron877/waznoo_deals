@@ -16,7 +16,7 @@ class CreateDeals < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :deals, :starting_date
+    
   end
 
   def self.down
