@@ -1,0 +1,29 @@
+<% @deal = @deal || todays_deal %>
+<h1><%= @deal.name %></h1>
+	<div id="datacol">
+	    <h1>Price: $<%= @deal.price/100 %></h1>
+	    <% if @deal.num_purchased.<(@deal.num_available) %>
+	        <h1><%= link_to "Buy Now!", '#' %></h1>
+	    <% else %>
+	        <h1>Sold Out </h1>
+	    <% end %>    
+	    <h2>Value: $<%= @deal.value/100 %></h2>
+	    <h2>Discount: <%= ((1.0 - (@deal.price.to_r/@deal.value.to_r))*100).to_i %>%</h2>
+	    <h2>You save: $<%= (@deal.value - @deal.price) / 100 %></h2>
+	    <h1> <%= @deal.num_purchased %> bought!</h1>
+	    <% if @deal.num_purchased > @deal.num_needed_to_unlock %>
+            <h2> The deal is on! </h2>
+            <h3> Tipped at # with <%= @deal.num_needed_to_unlock %> bought</h3>
+        <% else %>
+            <h2> /Show Deal Progress Bar/ </h2> 
+            <h3> <%= @deal.num_needed_to_unlock - @deal.num_purchased %>
+                more needed to get the deal  </h3>
+        <% end %>
+    </div>
+    <div id="descriptcol">
+		<h2> Description </h2>
+		<h3> <%= @deal.blurb %></h3>
+		<h2> The fine print </h2>
+		<h3> Expires <%= @deal.expires %></h3>
+		<h3> Company <%= @deal.company %></h3>
+    </div>

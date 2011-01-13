@@ -10,15 +10,42 @@ module SessionsHelper
     self.current_user = nil
   end
 
-  def deny_access
-    store_location
-    redirect_to signin_path, :notice => "Please sign in to access this page."
+
+  def must_be_signed_in
+      deny_access(:signin, signin_path) unless signed_in?
   end
   
-  def must_be_admin
-    redirect_to root_path, :notice => "You must be an administrator to access this page."
+  def cant_be_signed_in
+      deny_access(:signout, root_path) if signed_in?
+  end
+  
+  def must_be_correct_user
+      @user = User.find(params[:id])
+      deny_access(:correct_user, root_path) unless current_user?(@user)
   end
 
+  def must_be_admin_user
+    if not signed_in?
+	  deny_access(:signin, signin_path)
+    else
+      deny_access(:admin, root_path) unless current_user.admin?
+    end
+  end
+    
+  def deny_access(message, path)
+	if message == :signin
+		notice = "Please sign in to access this page."
+	elsif message == :signout
+		notice = "Please sign out to access this page."
+	elsif message == :correct_user
+		notice = "You don't have permission to access this page."
+	elsif message == :admin
+		notice = "Only administrators can access this page."
+	end
+    store_location
+    redirect_to path, :notice => notice
+  end
+  
   def current_user?(user)
     user == current_user
   end
@@ -38,6 +65,32 @@ module SessionsHelper
 
   def current_user
     @current_user ||= user_from_remember_token
+  end
+  
+  def todays_deal
+	deal = Deal.find_by_starting_date(today(Time.new))
+	if deal.nil?  # this only happens if we don't use do a new deal every day.
+		#find the deal that should be displayed for today
+	else
+	    return deal
+	end
+  end
+	
+	
+  def today(date)
+    if date.month > 10
+		if date.day > 10
+			return "#{date.month}/#{date.day}/#{date.year}"
+		else
+			return "#{date.month}/0#{date.day}/#{date.year}"
+		end
+	else
+		if date.day > 10
+			return "0#{date.month}/#{date.day}/#{date.year}"
+		else
+			return "0#{date.month}/0#{date.day}/#{date.year}"
+		end
+	end
   end
 
   private
