@@ -1,5 +1,8 @@
 <% @deal = @deal || todays_deal %>
-<h1><%= @deal.name %></h1>
+<% if @deal.nil? %>
+	<% render 'no_deal' %>
+<% else %>
+  <h1><%= @deal.name %></h1>
 	<div id="datacol">
 	    <h1>Price: $<%= @deal.price/100 %></h1>
 	    <% if @deal.num_purchased.<(@deal.num_available) %>
@@ -27,3 +30,4 @@
 		<h3> Expires <%= @deal.expires %></h3>
 		<h3> Company <%= @deal.company %></h3>
     </div>
+<% end %>

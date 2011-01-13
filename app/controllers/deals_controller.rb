@@ -1,5 +1,5 @@
 class DealsController < ApplicationController
-  before_filter :admin_user, :except => [ :show ]
+  before_filter :must_be_admin_user, :except => [ :show ]
   
   
   # show the page for creating a deal

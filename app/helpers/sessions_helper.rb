@@ -68,16 +68,31 @@ module SessionsHelper
   end
   
   def todays_deal
-	deal = Deal.find_by_starting_date(today(Time.new))
-	if deal.nil?  # this only happens if we don't use do a new deal every day.
-		#find the deal that should be displayed for today
-	else
-	    return deal
-	end
+	deal = Deal.find_by_starting_date(today)
+	#if deal.nil?  # this only happens if we don't use do a new deal every day.
+		#find the most recent deal that started before today
+		#date = today
+		#days_passed = 0
+		#while deal.nil?
+		#  date = previous_day(date) 
+		#  deal = Deal.find_by_starting_date(date) #See if there was a deal offered the day before today, before yesterday, etc
+		#  days_passed += 1 
+		#  if days_passed > 365
+		#	puts "major fuckup"  # there haven't been any deals for over a year...?
+		#	break
+		#  end
+		#end
+		#if deal.days_available < days_passed #the last deal is still active
+		#	return deal
+		#else
+	return deal
+	    #end
   end
+  #end
 	
 	
-  def today(date)
+  def today
+	date = Time.new
     if date.month > 10
 		if date.day > 10
 			return "#{date.month}/#{date.day}/#{date.year}"
@@ -92,6 +107,42 @@ module SessionsHelper
 		end
 	end
   end
+  		
+  				 
+  # finds the date (xx/xx/xxxx) immediately prior to the supplied date
+  #def previous_day(date)
+  #  day = date[3,4].to_i
+	#if day != 1	#if it's not the first of the month
+	#  yesterday = day.pred
+    #      return "#{date[0,1]}#{"/"}#{yesterday}#{"/"}#{date[6,7,8,9]}"
+	#else
+	#	month = date[0,1].to_i
+#		year = date[6,7,8,9].to_i
+#		if month == 2 or month == 4 or month == 6 or month  == 8 or
+#			 month == 9 or month == 11
+#		     last_month = month.pred
+#		     yesterday = 31
+#		elsif month == 1
+#		     last_month = 12
+ #  		     yesterday = 31
+  # 		     year = year.pred
+#		elsif month == 5 or month == 7 or month == 10 or month == 12
+#			 last_month = month.pred
+#			 yesterday = 30
+#	    elsif month == 3
+#			last_month = 2
+#			if ( year % 400 == 0 ) or (year % 4 == 0 and year % 100 != 0)
+#				yesterday = 29
+#			else 
+#				yesterday = 28
+#			end
+#		end
+ #         return "#{last_month}#{"/"}#{yesterday}#{"/"}#{year.to_s}"
+#	end
+#  end
+
+
+
 
   private
 

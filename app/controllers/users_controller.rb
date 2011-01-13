@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_filter :must_be_signed_in, :only => [:edit, :update, :index]
   before_filter :must_be_correct_user, :only => [:edit, :update]
   before_filter :must_be_admin_user, :only => [ :index, :destroy ]
-  before_filter :cant_be_logged_in, :only => [:create, :new]
+  before_filter :cant_be_signed_in, :only => [:create, :new]
   
   def new
     @title = "Sign up"

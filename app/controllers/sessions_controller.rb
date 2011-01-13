@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-	before_filter :cant_be_logged_in, :only => [:create, :new]
+	before_filter :cant_be_signed_in, :only => [:create, :new]
 	before_filter :must_be_signed_in, :only => [:destroy]
 	
   def new

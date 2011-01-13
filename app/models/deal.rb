@@ -3,7 +3,7 @@ class Deal < ActiveRecord::Base
                   :value, :num_available, :num_purchased,
                   :num_needed_to_unlock, :blurb, :expires,
                   :company, :location
-  date_regex = Regexp.new('[0-1]{1}+[0-9]{1}+\/+[0-3]{1}+[0-9]{1}\/+2+[0-9]{3}')
+  date_regex = /[0-1]{1}+[0-9]{1}+\/+[0-3]{1}+[0-9]{1}\/+2+[0-9]{3}/
   
   # every deal must have a unique name between 10 and 140 characters
   validates :name, :presence => true,
@@ -14,12 +14,14 @@ class Deal < ActiveRecord::Base
   # it must be in the form xx/xx/xxxx, ie 05/14/2013
   # 2 deals can't start on the same day (current implementation)                 
   validates :starting_date, :presence => true,
-							:uniqueness => true
+							:uniqueness => true,
+							:format => { :with => date_regex } 
   
   # a deal can expire between Jan 1, 2011, and Dec 31, 2999 
   # it must be in the form xx/xx/xxxx, ie 05/14/2013
   # NOTE this is the day the company stops accepting vouchers.                 
-  validates :expires, :presence => true
+  validates :expires, :presence => true,
+					  :format => { :with => date_regex }
 							
 							
   # a deal must be available for 1 to 14 days

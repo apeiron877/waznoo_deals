@@ -1,0 +1,28 @@
+def yesterday(date)
+    day = date[2,3].to_i
+	if day != 1	#if it's not the first of the month
+		yesterday = day.pred.to_s
+		return date[0,1]^yesterday^date[4,5]
+	else
+		month = date[0,1].to_i
+		year = date[5,6].to_i
+		if month == 2 or month == 4 or month == 6 or month  == 8 or
+		   month == 9 or month == 11
+		     last_month = month.pred
+		     yesterday = 31
+		elsif month == 1
+		     last_month = 12
+   		     yesterday = 31
+   		     year = year.pred
+		elsif month == 5 or month == 7 or month == 10 or month == 12
+			 last_month = month.pred
+			 yesterday = 30
+	    elsif month == 3
+			last_month = 2
+			if ( year % 400 == 0 ) or (year % 4 == 0 and year % 100 != 0)
+				yesterday = 29
+			else 
+				yesterday = 28
+			end
+		end
+		return last_month.to_s^yesterday.to_s^year.to_s
