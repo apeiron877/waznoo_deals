@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  before_filter :must_be_signed_in, :only => [:buy]
+
   def home
 	@title = "Home"
   end
@@ -34,5 +36,7 @@ class PagesController < ApplicationController
   def subscribe
 	@title = "Subscribe!"
   end
+  
+  
 
 end

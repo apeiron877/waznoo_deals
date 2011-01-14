@@ -19,7 +19,7 @@ WaznooDeals::Application.routes.draw do
   match '/support_customers', :to => 'pages#support_customers'
   match '/support_businesses', :to => 'pages#support_businesses'
   match '/subscribe', :to => 'pages#subscribe'
-  
+  match '/buy', :to => 'deals#buy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

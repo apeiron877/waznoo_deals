@@ -1,0 +1,6 @@
+<%= form_for(@user) do |f| %>
+  <%= render 'shared/payment_form', :f => f %>
+  <div class="actions">
+    <%= f.submit "Buy Now!" %>
+  </div>
+<% end %>

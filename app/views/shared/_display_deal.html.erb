@@ -10,7 +10,7 @@
 	<div id="datacol">
 	    <h1>Price: $<%= @deal.price/100 %></h1>
 	    <% if @deal.num_purchased.<(@deal.num_available) %>
-	        <h1><%= link_to "Buy Now!", '#' %></h1>
+	        <h1><%= link_to "Buy Now!", @deal.paypal_url(root_path) %></h1>
 	    <% else %>
 	        <h1>Sold Out </h1>
 	    <% end %>    

@@ -60,6 +60,24 @@ class Deal < ActiveRecord::Base
   validates :location, :presence => true,
                        :length => { :maximum => 140, :minimum => 4 }        
                
+         
+  def paypal_url(return_url)
+  values = {
+    :business => 'dfr120_1295032444_biz@mymail.pomona.edu',
+    :cmd => '_cart',
+    :upload => 1,
+    :return => return_url,
+    :invoice => id
+  }
+    values.merge!({
+      :amount => @deal.price,
+      :item_name => @deal.name
+    })
+  
+  "https://www.sandbox.paypal.com/cgi-bin/webscr?" + values.to_query
+end       
+         
+         
                   
 
 end

@@ -1,5 +1,6 @@
 class DealsController < ApplicationController
-  before_filter :must_be_admin_user, :except => [ :show ]
+  before_filter :must_be_signed_in
+  before_filter :must_be_admin_user, :except => [:show, :buy]
   
   
   # show the page for creating a deal
@@ -46,7 +47,7 @@ class DealsController < ApplicationController
     end
   end
   
-  # we can use index to show a sampling of previous deal
+  # we can use index to show a sampling of previous deals
   # implement that later
   def index
     @title = "All deals"
@@ -60,6 +61,14 @@ class DealsController < ApplicationController
     flash[:success] = "Deal destroyed."
     redirect_to deals_path
   end
+  
+  def buy
+	@title = "Purchase Deal"
+	@deal = todays_deal
+	
+  end
+  
+  
 
   private
   
