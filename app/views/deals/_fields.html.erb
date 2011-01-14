@@ -1,45 +1,45 @@
 <%= render 'shared/error_messages', :object => f.object %>
 <div class="field">
-  <%= f.label :name %><br />
+  <%= f.label :name %> -Descriptive name for the deal.<br />
   <%= f.text_field :name %>
 </div>
 <div class="field">
-  <%= f.label :starting_date %><br />
+  <%= f.label :starting_date, "Starting Date" %> -The first day the deal will be offered on Waznoo, starting at 1am.<br />
   <%= f.text_field :starting_date %>
 </div>
 <div class="field">
-  <%= f.label :days_available %><br />
+  <%= f.label :days_available, "Days Available" %> -The number of days the deal will be offered on Waznoo. (We want to work towards daily deals). <br />
   <%= f.text_field :days_available %>
 </div>
 <div class="field">
-  <%= f.label :price %><br />
+  <%= f.label :price %> -No decimals! Enter 1250 for $12.50, 2500 for $25.00, etc.<br />
   <%= f.text_field :price %>
 </div>
 <div class="field">
-  <%= f.label :value %><br />
+  <%= f.label :value %> -No decimals! Enter 1250 for $12.50, 2500 for $25.00, etc.<br />
   <%= f.text_field :value %>
 </div>
 <div class="field">
-  <%= f.label :num_available, "Number Available" %><br />
+  <%= f.label :num_available, "Number Available" %> -The maximum number of vouchers offered by the company. <br />
   <%= f.text_field :num_available %>
 </div>
 <div class="field">
-  <%= f.label :num_needed_to_unlock, "Number of purchases needed to unlock the deal" %><br />
+  <%= f.label :num_needed_to_unlock, "Number of purchases needed to unlock the deal" %> -If fewer than this number are claimed, no one gets the deal, and no one gets charged. <br />
   <%= f.text_field :num_needed_to_unlock %>
 </div>
 <div class="field">
-  <%= f.label :expires %><br />
+  <%= f.label :expires, "Coupon Expires" %> -Enter the day the company stops accepting vouchers, NOT final day the deal is offered on Waznoo.<br />
   <%= f.text_field :expires %>
 </div>
 <div class="field">
-  <%= f.label :blurb %><br />
+  <%= f.label :blurb %> -Write a short(10-2000 characters) description of the deal. <br />
   <%= f.text_area :blurb %>
 </div>
 <div class="field">
-  <%= f.label :company %><br />
+  <%= f.label :company %> -Name of the company offering the deal<br />
   <%= f.text_field :company %>
 </div>
 <div class="field">
-  <%= f.label :location %><br />
+  <%= f.label :location %> -Location of the company (in Socal) <br />
   <%= f.text_field :location %>
 </div>

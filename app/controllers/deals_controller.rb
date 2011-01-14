@@ -18,8 +18,6 @@ class DealsController < ApplicationController
   def create
 	@deal = Deal.new(params[:deal])
 	@deal.num_purchased = 0
-	
-		
 	if @deal.save
 	    flash[:success] = "Deal saved to database"
         redirect_to deals_path
@@ -32,15 +30,13 @@ class DealsController < ApplicationController
   # we want to show to current deal on the homepage by passing in
   # the current date
   def show
-   # if params[:starting_date] == today(Time.new)
     @deal = Deal.find(params[:id])
-     @data_tables = ActiveRecord::Base.connection.tables
-   # end
   end
 
   # the action of editing a deal, ie pushing a change to the database
   def update
 	@deal = Deal.find_by_id(params[:id])
+	@deal.price = @deal.price*100.to_i
     if @deal.update_attributes(params[:deal])
       flash[:success] = "Deal updated."
       redirect_to deals_path

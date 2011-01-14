@@ -1,11 +1,12 @@
 <% @deal = @deal || todays_deal %>
 <% if @deal.nil? or @deal == 0 %>
 	<div>
-		<h2> No Deal Today </h2>
-		<h3> We're really really sorry </h3>
+		<h2> Sorry, no deals are scheduled for today </h2>
+		<h3> Check back soon for a fantastic deal! </h3>
 		</div>
 <% else %>
-  <h1><%= @deal.name %></h1>
+  <h2> Deal for <%= date_as_string(Date.today) %> </h2>
+  <h2><%= @deal.name %></h2>
 	<div id="datacol">
 	    <h1>Price: $<%= @deal.price/100 %></h1>
 	    <% if @deal.num_purchased.<(@deal.num_available) %>
