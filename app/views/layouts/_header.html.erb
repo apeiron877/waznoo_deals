@@ -1,5 +1,7 @@
 <% if (!current_user.nil?) and current_user.admin? %>
-   <%= link_to "Admin Tools(Index)", users_path %>
+   <%= link_to "Show all users", users_path %>
+   <%= link_to "Create a deal", new_deal_path %>
+   <%= link_to "Show all deals", deals_path %>
 <% end %>
 <div id="logo" class="span-10">
   <!--<% logo = image_tag("logo400.png", :alt => "WaznooDeals!") %>

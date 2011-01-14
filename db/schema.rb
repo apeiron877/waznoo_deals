@@ -10,7 +10,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110111043746) do
+ActiveRecord::Schema.define(:version => 20110113210134) do
+
+  create_table "deals", :force => true do |t|
+    t.string   "name"
+    t.string   "starting_date"
+    t.integer  "days_available"
+    t.integer  "price"
+    t.integer  "value"
+    t.integer  "num_available"
+    t.integer  "num_purchased"
+    t.integer  "num_needed_to_unlock"
+    t.string   "blurb"
+    t.string   "expires"
+    t.string   "company"
+    t.string   "location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "deals", ["starting_date"], :name => "index_deals_on_starting_date"
 
   create_table "users", :force => true do |t|
     t.string   "name"

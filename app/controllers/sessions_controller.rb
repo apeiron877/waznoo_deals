@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
-
+	before_filter :cant_be_signed_in, :only => [:create, :new]
+	before_filter :must_be_signed_in, :only => [:destroy]
+	
   def new
     @title = "Sign in"
   end
@@ -13,11 +15,9 @@ class SessionsController < ApplicationController
       render 'new'
     else
       sign_in user
-      redirect_back_or user
+      redirect_back_or root_path
     end
-
-end
-
+  end
 
   def destroy
     sign_out

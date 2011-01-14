@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-  before_filter :authenticate, :only => [:edit, :update, :index]
-  before_filter :correct_user, :only => [:edit, :update]
-  before_filter :admin_user, :only => [ :index, :destroy ]
+  before_filter :must_be_signed_in, :except => [:new, :create]
+  before_filter :must_be_correct_user, :only => [:show, :edit, :update]
+  before_filter :must_be_admin_user, :only => [ :index, :destroy ]
+  before_filter :cant_be_signed_in, :only => [:new, :create]
   
   def new
     @title = "Sign up"
@@ -55,22 +56,9 @@ class UsersController < ApplicationController
  
   private
 
-    def authenticate
-      deny_access unless signed_in?
-    end
+    
 
-	def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_path) unless current_user?(@user)
-    end
-
-    def admin_user
-      if current_user.nil?
-		deny_access
-	  else
-      must_be_admin unless current_user.admin?
-      end
-    end
+	
 
   
 end

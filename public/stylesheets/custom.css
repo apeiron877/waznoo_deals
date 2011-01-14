@@ -25,9 +25,9 @@
 }
 
 #top-buttons ul li {
-  border-left: 2px black solid;
-  border-right: 2px black solid;
-  border-bottom: 2px black solid;
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+  border-bottom: 1px black solid;
   background-color: lightblue;
   width:  85px;
   height: 50px;
@@ -62,9 +62,9 @@
 }
 
 #sidebar ul li {
-  border-left: 2px black solid;
-  border-top: 2px black solid;
-  border-bottom: 2px black solid;
+  border-left: 1px black solid;
+  border-top: 1px black solid;
+  border-bottom: 1px black solid;
   background-color: lightblue;
   width:  120px;
   height: 50px;

@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe "Users" do
+describe Deal do
   before(:each) do
     @attr = { :name => "$19 for Medium-Sized, Personalized Bagguettes
 						Photo Bag ($41 Value)", 
 			  :price => 1700,
 			  :value => 4100,
-			  :starting_date => "01/14/2011",
+			  :starting_date => "01/10/2011",
 			  :days_available => 5,
 			  :num_available => 200,
 			  :num_purchased => 138,
@@ -17,69 +17,30 @@ describe "Users" do
              :expires => "07/14/2011",
 			 :location => "www.bagettes.com",
 			 :company => "Baggettes"
-           }
-    @deal = Deal.create!(@attr)
+             }
+
   end
-  
-  describe "signup" do
-
-    describe "failure" do
-      
-      it "should not make a new user" do
-        lambda do
-          visit signup_path
-          fill_in "Name",         :with => ""
-          fill_in "Email",        :with => ""
-          fill_in "Password",     :with => ""
-          fill_in "Confirmation", :with => ""
-          click_button
-          response.should render_template('users/new')
-          response.should have_selector("div#error_explanation")
-        end.should_not change(User, :count)
-      end
-    end
-    describe "success" do
-
-      it "should make a new user" do
-        lambda do
-          visit signup_path
-          fill_in "Name",         :with => "Example User"
-          fill_in "Email",        :with => "user@example.com"
-          fill_in "Password",     :with => "foobar"
-          fill_in "Confirmation", :with => "foobar"
-          click_button
-          response.should have_selector("div.flash.success",
-                                        :content => "Welcome")
-          response.should render_template('/')
-        end.should change(User, :count).by(1)
-      end
-    end
+  it "should create a new instance given valid attributes" do
+    Deal.create!(@attr)
+  end
+  it "should require a name" do
+    no_name_deal = Deal.new(@attr.merge(:name => ""))
+    no_name_deal.should_not be_valid
+  end
+  it "should require a price" do
+    no_price_deal =  Deal.new(@attr.merge(:price => nil))
+    no_price_deal.should_not be_valid
+  end
+  it "should reject names that are too long" do
+    long_name = "a" * 150
+    long_name_deal = Deal.new(@attr.merge(:name => long_name))
+    long_name_deal.should_not be_valid
+  end
+  it "should reject duplicate names, starting_dates, and blurbs" do
+    # Put a deal with given info into the database.
+    Deal.create!(@attr)
+    deal_with_duplicate_info = Deal.new(@attr)
+    deal_with_duplicate_info.should_not be_valid
   end
 
-  describe "sign in/out" do
-
-    describe "failure" do
-      it "should not sign a user in" do
-        visit signin_path
-        fill_in :email,    :with => ""
-        fill_in :password, :with => ""
-        click_button
-        response.should have_selector("div.flash.error", :content => "Invalid")
-      end
-    end
-
-    describe "success" do
-      it "should sign a user in and out" do
-        user = Factory(:user)
-        visit signin_path
-        fill_in :email,    :with => user.email
-        fill_in :password, :with => user.password
-        click_button
-        controller.should be_signed_in
-        click_link "Sign out"
-        controller.should_not be_signed_in
-      end
-    end
-  end
-end
-
+ end

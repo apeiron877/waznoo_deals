@@ -1,0 +1,9 @@
+<h1>Create a new deal</h1>
+
+<%= form_for(@deal) do |f| %>
+  <%= render 'fields', :f => f %>
+  <div class="actions">
+    <%= f.submit "Create deal" %>
+  </div>
+<% end %>
+

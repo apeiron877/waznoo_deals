@@ -1,0 +1,9 @@
+<li>
+  <%= link_to deal.name, deal %>
+  <% if current_user.admin? %>
+  | <%= link_to "edit", edit_deal_path(:id => deal.id),
+                                :title => "Edit #{deal.name}" %>
+  | <%= link_to "delete", deal, :method => :delete, :confirm => "Delete this deal?",
+                                :title => "Delete #{deal.name}" %>                              
+  <% end %>
+</li>

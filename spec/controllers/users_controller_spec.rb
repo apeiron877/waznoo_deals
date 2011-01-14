@@ -12,16 +12,18 @@ describe UsersController do
         flash[:notice].should =~ /please sign in/i
       end
    end
+   
     describe "for signed-in users" do
-    before(:each) do
-	  @user = test_sign_in(Factory(:user))
-	end
+      before(:each) do
+	    @user = test_sign_in(Factory(:user))
+	  end
       it "should deny access" do
         get :index
         response.should redirect_to(root_path)
-        flash[:notice].should =~ /admin/i
+        flash[:notice].should =~ /administrators/i
       end
-    end  
+    end 
+     
     describe "for admin users" do
       before(:each) do
         @user = test_sign_in(Factory(:user))
@@ -32,7 +34,6 @@ describe UsersController do
         30.times do
           @users << Factory(:user, :email => Factory.next(:email))
         end
-
       end
       it "should be successful" do
         get :index
@@ -57,8 +58,8 @@ describe UsersController do
         response.should have_selector("a", :href => "/users?page=2",
                                            :content => "Next")
       end
+    end
   end
-end
 
   describe "GET 'new'" do
     before(:each) do
@@ -75,19 +76,44 @@ end
   end
   
   describe "GET 'show'" do
-    before(:each) do
-      @user = Factory(:user)
-    end
-    it "should be successful" do
-      get :show, :id => @user
-      response.should be_success
-    end
-    it "should find the right user" do
-      get :show, :id => @user
-      assigns(:user).should == @user
+    describe "for non-signed-in users" do
+      it "should deny access" do
+        get :index
+        response.should redirect_to(signin_path)
+        flash[:notice].should =~ /please sign in/i
+      end
+  end
+   
+    describe "for signed-in users" do
+      before(:each) do
+	    @user = test_sign_in(Factory(:user))
+	  end
+      it "should deny access" do
+        get :index
+        response.should redirect_to(root_path)
+        flash[:notice].should =~ /administrators/i
+      end
+    end  
+    
+    describe "for admin users" do
+      before(:each) do
+        @user = test_sign_in(Factory(:user))
+        second = Factory(:user, :email => "another@example.com")
+        third  = Factory(:user, :email => "another@example.net")
+	    @user.admin = true
+        @users = [@user, second, third]
+      end
+      it "should be successful" do
+        get :show, :id => @user
+        response.should be_success
+      end
+      it "should have the right title" do
+        get :show, :id => @user
+        response.should have_selector("title", :content => "#{@user.name}")
+      end
     end
   end
-
+ 
   describe "POST 'create'" do
 
     describe "failure" do
