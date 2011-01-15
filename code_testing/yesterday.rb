@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
+=begin
 def previous_day(date)
     day = date[3,4].to_i
 	if day != 1	#if it's not the first of the month
@@ -30,4 +31,12 @@ def previous_day(date)
 	end
   end
 puts previous_day("04292010")
-
+=end
+sum = 0
+for i in 14..1000 do
+  if (i%5 == 0) and (i%3 == 0)
+	sum += i
+  end
+end
+ 
+ puts sum
