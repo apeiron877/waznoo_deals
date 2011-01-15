@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.3'
 gem 'sqlite3-ruby', '1.3.2', :require => 'sqlite3'
 gem 'will_paginate', '3.0.pre2'
-
+gem "activemerchant", :git => 'git://github.com/merbjedi/active_merchant.git', :branch => 'rails3', :require => "active_merchant"
 
 group :development do
   gem 'rspec-rails', '2.3.0'

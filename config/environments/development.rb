@@ -22,5 +22,15 @@ WaznooDeals::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+  
+  config.after_initialize do
+	ActiveMerchant::Billing::Base.mode = :test
+	::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
+	  :login => "prosel_1295043078_biz_api1.mymail.pomona.edu",
+	  :password => "1295043089",
+	  :signature => "Ab7YzWTiowt0BHf-Ktne5j.KCvXXAqtvnJ6nJMS0Mnr8VKZ7iV0WjT-h"
+  )
+  end
+  
 end
 

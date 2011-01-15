@@ -4,8 +4,8 @@ namespace :db do
   desc "Fill database with sample data"
   task :populate => :environment do
     Rake::Task['db:reset'].invoke
-    admin = User.create!(:name => "Example User",
-                         :email => "example@railstutorial.org",
+    admin = User.create!(:name => "admin",
+                         :email => "admin@waznoodeals.com",
                          :password => "foobar",
                          :password_confirmation => "foobar")
     admin.toggle!(:admin)
@@ -18,5 +18,19 @@ namespace :db do
                    :password => password,
                    :password_confirmation => password)
     end
+    @deal_attr = { :name => "Default Deal!", 
+			  :price => 2500,
+			  :value => 4100,
+			  :starting_date => "01/11/2011",
+			  :days_available => 2,
+			  :num_available => 200,
+			  :num_purchased => 0,
+			  :num_needed_to_unlock => 15,
+			  :blurb => "Here is a short blurb about the deafult deal.",
+             :expires => "07/14/2011",
+			 :location => "www.waznoodeals.com",
+			 :company => "Waznoo Deals"
+           }
+    @deal = Deal.create!(@deal_attr) 
   end
 end

@@ -10,29 +10,34 @@
   <%= f.label :email %><br />
   <%= f.text_field :email %>
 </div>
-<div class="field">
-  <%= f.label :password %><br />
-  <%= f.password_field :password %>
-</div>
-<div class="field">
-  <%= f.label :password_confirmation, "Confirmation" %><br />
-  <%= f.password_field :password_confirmation %>
-</div>
-<h2> Billing Information </h2>
 <% end %>
+<h2> <%= "You're purchasing #{todays_deal.name}" %> </h2>
+<h2> Billing Information </h2>
+
 <div class="field">
-  <%= f.label :name, "Cardholder Name" %><br />
-  <%= f.text_field :name %>
+  <%= f.label :first_name, "First Name" %><br />
+  <%= f.text_field :first_name %>
 </div>
 <div class="field">
-  <%= f.label :email %><br />
-  <%= f.text_field :email %>
+  <%= f.label :last_name, "Last Name" %><br />
+  <%= f.text_field :last_name %>
 </div>
 <div class="field">
-  <%= f.label :password %><br />
-  <%= f.password_field :password %>
+  <%= f.label :card_type, "Card Type" %><br />
+  <%= f.select :card_type, {"Visa" => "visa", "Mastercard" => "master", "Discover" => "discover", "American Express" => "american_express"} %>
+						    
 </div>
 <div class="field">
-  <%= f.label :password_confirmation, "Confirmation" %><br />
-  <%= f.password_field :password_confirmation %>
+  <%= f.label :card_number, "Card Number" %><br />
+  <%= f.text_field :card_number %>
 </div>
+<div class="field">
+  <%= f.label :card_verification, "Card Verification Value (CVV)" %><br />
+  <%= f.text_field :card_verification %>
+</div>
+<div class="field">
+  <%= f.label :card_expires_on, "Card Expiration Date" %><br />
+  <%= f.date_select :card_expires_on, :discard_day => true, :start_year => Date.today.year,
+									  :end_year => (Date.today.year+10), :add_month_numbers => :true %>
+</div>
+

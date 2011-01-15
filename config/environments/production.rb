@@ -46,4 +46,16 @@ WaznooDeals::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  
+  config.after_initialize do
+	ActiveMerchant::Billing::Base.mode = :production
+	#Change the gateway to our production gateway
+	::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
+	  :login => "prosel_1295043078_biz_api1.mymail.pomona.edu",
+	  :password => "1295043089",
+	  :signature => "Ab7YzWTiowt0BHf-Ktne5j.KCvXXAqtvnJ6nJMS0Mnr8VKZ7iV0WjT-h"
+  )
+  end
+  
+  
 end

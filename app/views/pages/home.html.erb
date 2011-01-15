@@ -10,6 +10,7 @@
         <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
     <% else %>
         <div id="showdeal">
+			<h2> Deal for <%= date_as_string(Date.today) %> </h2>
 	        <%= render 'shared/display_deal' %>
         </div>  
 	<% end %>

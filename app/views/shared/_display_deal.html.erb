@@ -5,16 +5,15 @@
 		<h3> Check back soon for a fantastic deal! </h3>
 		</div>
 <% else %>
-  <h2> Deal for <%= date_as_string(Date.today) %> </h2>
   <h2><%= @deal.name %></h2>
 	<div id="datacol">
-	    <h1>Price: $<%= @deal.price/100 %></h1>
-	    <% if @deal.num_purchased.<(@deal.num_available) %>
-	        <h1><%= link_to "Buy Now!", @deal.paypal_url(root_path) %></h1>
+	    <h1>Price: $<%= "#{@deal.price/100}.#{@deal.price%100}" %></h1>
+	    <% if @deal.num_purchased.<(@deal.num_available)  %>
+	        <h1><%= link_to "Buy!", new_order_path %></h1>
 	    <% else %>
 	        <h1>Sold Out </h1>
 	    <% end %>    
-	    <h2>Value: $<%= @deal.value/100 %></h2>
+	    <h2>Value: $<%= "#{@deal.value/100}.#{@deal.value%100}" %></h2>
 	    <h2>Discount: <%= ((1.0 - (@deal.price.to_r/@deal.value.to_r))*100).to_i %>%</h2>
 	    <h2>You save: $<%= (@deal.value - @deal.price) / 100 %></h2>
 	    <h1> <%= @deal.num_purchased %> bought!</h1>
