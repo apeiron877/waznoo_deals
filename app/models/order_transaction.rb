@@ -1,3 +1,20 @@
+# == Schema Information
+# Schema version: 20110115032915
+#
+# Table name: order_transactions
+#
+#  id            :integer         not null, primary key
+#  order_id      :integer
+#  action        :string(255)
+#  amount        :integer
+#  success       :boolean
+#  authorization :string(255)
+#  message       :string(255)
+#  params        :text
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
 class OrderTransaction < ActiveRecord::Base
   belongs_to :order
   serialize :params

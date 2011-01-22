@@ -1,3 +1,25 @@
+# == Schema Information
+# Schema version: 20110115032915
+#
+# Table name: deals
+#
+#  id                   :integer         not null, primary key
+#  name                 :string(255)
+#  starting_date        :string(255)
+#  days_available       :integer
+#  price                :integer
+#  value                :integer
+#  num_available        :integer
+#  num_purchased        :integer
+#  num_needed_to_unlock :integer
+#  blurb                :string(255)
+#  expires              :integer
+#  company              :string(255)
+#  location             :string(255)
+#  created_at           :datetime
+#  updated_at           :datetime
+#
+
 class Deal < ActiveRecord::Base
   attr_accessible :name, :starting_date, :days_available, :price,
                   :value, :num_available, :num_purchased,
