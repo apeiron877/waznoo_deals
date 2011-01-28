@@ -1,9 +1,12 @@
 <h1>All Coupons</h1>
 
-<%= will_paginate %>
+<div class="flickr_pagination">
+  <%= will_paginate @posts, :container => false %>
+  <div class="coupon_row">
+    <%= render @coupons %>
+  </div>
+  <%= will_paginate @posts, :container => false %>
+</div>
 
-<ul class="coupons">
-  <%= render @coupons %>
-</ul>
 
-<%= will_paginate %>
+

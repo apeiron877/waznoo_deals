@@ -1,11 +1,13 @@
-<li>
 <!--   link_to coupon.name, coupon_path  %>  change to a javascript print dialog -->
-  <%= coupon.name %>
   
+  <div id="coupon" "pagination" >
+  <h2> <%= coupon.name %> </h2>
+  <h3> Expires: <%= coupon.expires_on %>	</h3>
   <% if current_user.admin? %>
-  | <%= link_to "edit", edit_coupon_path(:id => coupon.id),
+  <%= link_to "edit", edit_coupon_path(:id => coupon.id),
                                 :title => "Edit #{coupon.name}" %>
-  | <%= link_to "delete", coupon, :method => :delete, :confirm => "Delete this coupon?",
+  <%= link_to "delete", coupon, :method => :delete, :confirm => "Delete this coupon?",
                                 :title => "Delete #{coupon.name}" %>                              
   <% end %>
-</li>
+  </div>
+  

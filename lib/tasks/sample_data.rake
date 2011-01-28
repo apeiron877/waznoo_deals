@@ -17,7 +17,14 @@ namespace :db do
                    :email => email,
                    :password => password,
                    :password_confirmation => password)
+      Coupon.create!(:name => "Test Coupon #{n}", 
+			  :expires_on => "12/11/2012",
+			  :days_to_regen => 7,
+			  :company => "Waznoo Deals",
+			  :redeemable_at => "170 East 6th Street",
+			  :fine_print => "Be sure to read the fine print")           
     end
+    
     @deal_attr = { :name => "Default Deal!", 
 			  :price => 2500,
 			  :value => 4100,

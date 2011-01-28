@@ -49,7 +49,7 @@ class CouponsController < ApplicationController
   # implement that later
   def index
     @title = "All coupons"
-    @coupons = Coupon.paginate(:page => params[:page])
+    @coupons = Coupon.paginate(:page => params[:page], :per_page => 5)
   end
 
   # this really shouldn't ever be called in production, since we want a 
@@ -62,7 +62,7 @@ class CouponsController < ApplicationController
   
   def print
 	@title = "Print coupon"
-	 @coupon = Coupon.find_by_id(params[:id])
+	@coupon = Coupon.find_by_id(params[:id])
 	
   end
   

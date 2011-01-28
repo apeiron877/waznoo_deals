@@ -25,7 +25,7 @@ class Deal < ActiveRecord::Base
                   :value, :num_available, :num_purchased,
                   :num_needed_to_unlock, :blurb, :expires,
                   :company, :location
-  date_regex = /[0-1]{1}+[0-9]{1}+\/+[0-3]{1}+[0-9]{1}\/+2+[0-9]{3}/
+  date_regex = /[[0-1]{1}[0-9]{1}\/[0-3]{1}[0-9]{1}\/2[0-9]{3}/
   
   # every deal must have a unique name between 10 and 140 characters
   validates :name, :presence => true,
