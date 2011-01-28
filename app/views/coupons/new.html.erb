@@ -1,0 +1,9 @@
+<h1>Create a new coupon</h1>
+
+<%= form_for(@coupon) do |f| %>
+  <%= render 'fields', :f => f %>
+  <div class="actions">
+    <%= f.submit "Create coupon" %>
+  </div>
+<% end %>
+

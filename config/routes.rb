@@ -1,17 +1,19 @@
 WaznooDeals::Application.routes.draw do
 
-  get "sessions/new"
+  #get "sessions/new"
 
   resources :users
   resources :sessions, :only => [ :new, :create, :destroy ]
   resources :deals
   resources :orders, :only => [ :new, :create ]
+  resources :coupons
   root :to => 'pages#home'
 
+  #root :to => 'deals#show' ?
   match '/signup',  :to => 'users#new'
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
-  match "/coupons", :to => "pages#coupons"
+  match "/coupons", :to => "coupons#index"
   match "/events", :to => "pages#events"
   match "/philosophy", :to => 'pages#philosophy'
   match '/how_it_works', :to => 'pages#how_it_works'

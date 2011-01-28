@@ -1,0 +1,25 @@
+<%= render 'shared/error_messages', :object => f.object %>
+<div class="field">
+  <%= f.label :name %> -Descriptive name for the coupon.<br />
+  <%= f.text_field :name %>
+</div>
+<div class="field">
+  <%= f.label :expires_on, "Coupon Expires" %> -Enter the day the expires.<br />
+  <%= f.text_field :expires_on %>
+</div>
+<div class="field">
+  <%= f.label :days_to_regen %> -Number of days it takes to this coupon to become available again after use. (1-14) <br />
+  <%= f.text_field :days_to_regen %>
+</div>
+<div class="field">
+  <%= f.label :company %> -Name of the company offering the coupon. <br />
+  <%= f.text_field :company %>
+</div>
+<div class="field">
+  <%= f.label :redeemable_at %> -Location where the coupon can be redeemed. <br />
+  <%= f.text_field :redeemable_at %>
+</div>
+<div class="field">
+  <%= f.label :fine_print %> -Restrictions and other legal stuff. <br />
+  <%= f.text_field :fine_print %>
+</div>

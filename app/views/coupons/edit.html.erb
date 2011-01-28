@@ -1,0 +1,9 @@
+<h1>Edit deal</h1>
+
+<%= form_for(@coupon) do |f| %>
+  <%= render 'fields', :f => f %>
+  <div class="actions">
+    <%= f.submit "Save changes" %>
+  </div>
+<% end %>
+
