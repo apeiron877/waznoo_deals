@@ -16,7 +16,7 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=10
+current_page=59
 FILE_NAME_0=205;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/pages/coupons.html.erb;0
 FILE_NAME_1=39;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/pages/events.html.erb;0
 FILE_NAME_2=124;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/pages/home.html.erb;0
@@ -44,7 +44,7 @@ FILE_NAME_23=133;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/Gemf
 FILE_NAME_24=337;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/shared/_error_messages.html.erb;0
 FILE_NAME_25=105;Ruby;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/controllers/application_controller.rb;0
 FILE_NAME_26=321;Ruby;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/controllers/users_controller.rb;0
-FILE_NAME_27=155;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/users/new.html.erb;0
+FILE_NAME_27=137;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/users/new.html.erb;0
 FILE_NAME_28=3359;Ruby;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/spec/controllers/users_controller_spec.rb;0
 FILE_NAME_29=1333;Ruby;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/models/user.rb;0
 FILE_NAME_30=3831;Ruby;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/spec/models/user_spec.rb;0
@@ -76,3 +76,8 @@ FILE_NAME_55=0;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/vi
 FILE_NAME_56=391;Ruby;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/models/coupon.rb;0
 FILE_NAME_57=68;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/shared/_coupon.html.erb;0
 FILE_NAME_58=1633;Ruby;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/controllers/coupons_controller.rb;0
+FILE_NAME_59=824;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/coupons/_coupon.html.erb;0
+FILE_NAME_60=0;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/coupons/edit.html.erb;0
+FILE_NAME_61=0;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/coupons/_fields.html.erb;0
+FILE_NAME_62=0;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/coupons/index.html.erb;0
+FILE_NAME_63=0;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/coupons/new.html.erb;0
