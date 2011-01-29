@@ -62,8 +62,12 @@
       text-decoration: underline; }
 
 .flickr_pagination {
-  text-align: center;
+  text-align: right;
+  border: 2px blue solid;
   padding: .3em; }
+  .flickr_pagination h1 {
+    color: blue;
+    align: left;}
   .flickr_pagination a, .flickr_pagination span {
     padding: .2em .5em; }
   .flickr_pagination span.disabled {
@@ -80,11 +84,17 @@
       background: #0063DC;
       color: white; }
   .flickr_pagination .page_info {
-    color: #aaa;
-    padding-top: .8em; }
+    border: 2px pink dashed;
+    background: #2E6AB1;
+    color: white;
+    padding: .4em .6em;
+    width: 22em;
+    margin-bottom: .3em;
+    text-align: center; }
   .flickr_pagination .prev_page, .flickr_pagination .next_page {
     border-width: 2px; }
   .flickr_pagination .prev_page {
     margin-right: 1em; }
   .flickr_pagination .next_page {
     margin-left: 1em; }
+  

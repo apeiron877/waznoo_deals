@@ -1,11 +1,15 @@
 <h1>All Coupons</h1>
-
+<div>
+<script>
+jQuery(document).ready(function($) {
+  $('a[rel*=facebox]').facebox() 
+})
+</script>
+</div>
 <div class="flickr_pagination">
-  <%= will_paginate @posts, :container => false %>
-  <div class="coupon_row">
-    <%= render @coupons %>
-  </div>
-  <%= will_paginate @posts, :container => false %>
+  <%= will_paginate @coupons, :container => false %>
+  <%= render @coupons %>
+  <%= will_paginate @coupons, :container => false %>
 </div>
 
 
