@@ -23,13 +23,14 @@ $('a.print').click(function(){
 
   <div id="coupon">
   <h2> <%= coupon.name %> </h2>
+  <%= link_to "print", "#", :rel => "facebox", :title => "Print #{coupon.name}" %>
   <h3> Expires: <%= coupon.expires_on %></h3>
   <% if current_user.admin? %>
   <%= link_to "edit", edit_coupon_path(:id => coupon.id),
                                 :title => "Edit #{coupon.name}" %>
   <%= link_to "delete", coupon, :method => :delete, :confirm => "Delete this coupon?",
-                                :title => "Delete #{coupon.name}", :remote=>:true, :class=>"alert" %>                              
-  <%= link_to "print", "#", :rel => "facebox", :method => :print, :title => "Print #{coupon.name}", :remote=>:true, :class=>"alert" %> 
+                                :title => "Delete #{coupon.name}" %>                              
+   
   <% end %>
   </div>
  

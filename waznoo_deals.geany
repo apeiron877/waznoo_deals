@@ -16,7 +16,7 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=59
+current_page=23
 FILE_NAME_0=205;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/pages/coupons.html.erb;0
 FILE_NAME_1=39;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/pages/events.html.erb;0
 FILE_NAME_2=124;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/pages/home.html.erb;0
@@ -40,7 +40,7 @@ FILE_NAME_19=342;Ruby;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/spec
 FILE_NAME_20=0;Ruby;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/config/environment.rb;0
 FILE_NAME_21=0;Ruby;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/config/application.rb;0
 FILE_NAME_22=756;Ruby;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/config/environments/development.rb;0
-FILE_NAME_23=133;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/Gemfile;0
+FILE_NAME_23=264;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/Gemfile;0
 FILE_NAME_24=337;None;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/views/shared/_error_messages.html.erb;0
 FILE_NAME_25=105;Ruby;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/controllers/application_controller.rb;0
 FILE_NAME_26=321;Ruby;0;16;1;1;0;/home/dominick/rails_projects/waznoo_deals/app/controllers/users_controller.rb;0

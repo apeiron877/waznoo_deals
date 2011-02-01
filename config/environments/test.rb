@@ -30,6 +30,8 @@ WaznooDeals::Application.configure do
   # like if you have constraints or database-specific column types
   # config.active_record.schema_format = :sql
 
+  config.serve_static_assets = true
+
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
   
