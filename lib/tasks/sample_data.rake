@@ -23,7 +23,7 @@ namespace :db do
 			  :company => "Waznoo Deals",
 			  :redeemable_at => "170 East 6th Street",
 			  :fine_print => "Be sure to read the fine print",
-			  :image_url => "https://s3-us-west-1.amazonaws.com/waznoodeals-images/coupons/default.bmp")           
+			  :image_url => "https://s3-us-west-1.amazonaws.com/waznoodeals-images/coupons/default.png")           
     end
     
     @deal_attr = { :name => "Default Deal!", 
