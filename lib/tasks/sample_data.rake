@@ -9,7 +9,7 @@ namespace :db do
                          :password => "foobar",
                          :password_confirmation => "foobar")
     admin.toggle!(:admin)
-    99.times do |n|
+    27.times do |n|
       name  = Faker::Name.name
       email = "example-#{n+1}@waznoodeals.org"
       password  = "password"
@@ -34,7 +34,7 @@ namespace :db do
 			  :num_available => 200,
 			  :num_purchased => 0,
 			  :num_needed_to_unlock => 15,
-			  :blurb => "Here is a short blurb about the deafult deal.",
+			  :blurb => "Here is a short blurb about the default deal.",
              :expires => "07/14/2011",
 			 :location => "www.waznoodeals.com",
 			 :company => "Waznoo Deals"

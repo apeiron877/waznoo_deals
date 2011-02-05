@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
 <h1>All Coupons</h1>
   <table>
   <% counter = 0 %>
-  <% for i in 0..18 do %>
+  <% for i in 0..((@coupons.size / 3) - 1) do %>
 	<tr>
 	<% for j in 0..2 do %>
 		<td>
