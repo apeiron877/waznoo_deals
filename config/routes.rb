@@ -15,8 +15,8 @@ WaznooDeals::Application.routes.draw do
   match '/signout', :to => 'sessions#destroy'
   match "/coupons", :to => "coupons#index"
   match "/events", :to => "pages#events"
-  match "/philosophy", :to => 'pages#philosophy'
-  match '/how_it_works', :to => 'pages#how_it_works'
+  match "/about_us", :to => 'pages#about_us'
+  match '/what_is_waznoo', :to => 'pages#what_is_waznoo'
   match '/previous_deals', :to => 'pages#previous_deals'
   match '/support_customers', :to => 'pages#support_customers'
   match '/support_businesses', :to => 'pages#support_businesses'

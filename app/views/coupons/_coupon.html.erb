@@ -1,36 +1,24 @@
-<!--   link_to coupon.name, coupon_path  %>  change to a javascript print dialog -->
+<!--   link_to coupon.name, coupon_path  %>  change to a javascript print dialog
   
   
-  
-  <script>
-  
-  $(document).ready(function() {
-$('a.print').click(function(){
-	window.print();
-	return false;
-});
-});
-
-</script>
-
-
-
-
 
 <a href="images/stairs.jpg" rel="facebox">Facebox Popup</a>
 
-<a href="#" class="print">Print this page</a>
 
-  <div id="coupon">
-  <h2> <%= coupon.name %> </h2>
-  <%= link_to "print", "#", :rel => "facebox", :title => "Print #{coupon.name}" %>
-  <h3> Expires: <%= coupon.expires_on %></h3>
+
+
+-->
+
+<div id="coupon"> 
+  <h3> <%= coupon.name %> </h3>
+  <%= link_to "Print this Coupon!", coupon.image_url, :class => "print_coupon_button round", :rel => "facebox", :title => "Print #{coupon.name}" %>
+  <%= image_tag(coupon.image_url, :size => "150x100", :class => "round", :alt => coupon.name) %>
   <% if current_user.admin? %>
   <%= link_to "edit", edit_coupon_path(:id => coupon.id),
                                 :title => "Edit #{coupon.name}" %>
   <%= link_to "delete", coupon, :method => :delete, :confirm => "Delete this coupon?",
                                 :title => "Delete #{coupon.name}" %>                              
-   
   <% end %>
-  </div>
+  <p> Expires: <%= coupon.expires_on %></p>
+ </div> 
  

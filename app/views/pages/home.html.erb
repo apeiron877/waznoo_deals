@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>WaznooDeals! | <%= @title %></title>
-  </head>
-  <body>
+<script>
+jQuery(document).ready(function($) {
+ 	$('#buttons-side').hide();     // Hide the sidebar
+})
+</script>
+
     <h1>Today's Deal</h1>
     <% if !(signed_in?) %>
         <p> Sign up or log in to see today's fantastic offer!</p>    
@@ -14,5 +14,3 @@
 	        <%= render 'shared/display_deal' %>
         </div>  
 	<% end %>
-  </body>
-</html>

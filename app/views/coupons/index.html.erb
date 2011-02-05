@@ -1,16 +1,22 @@
-<h1>All Coupons</h1>
-<div>
 <script>
 jQuery(document).ready(function($) {
-  $('a[rel*=facebox]').facebox() 
+ 	$('#buttons-side').hide();     // Hide the sidebar
 })
 </script>
-</div>
-<div class="flickr_pagination">
-  <%= will_paginate @coupons, :container => false %>
-  <%= render @coupons %>
-  <%= will_paginate @coupons, :container => false %>
-</div>
 
+<h1>All Coupons</h1>
+  <table>
+  <% counter = 0 %>
+  <% for i in 0..18 do %>
+	<tr>
+	<% for j in 0..2 do %>
+		<td>
+		<%= render @coupons[counter] %>
+		</td>
+		<% counter += 1 %>
+   <% end %>
+   </tr>
+ <% end %>
+ </table>
 
 

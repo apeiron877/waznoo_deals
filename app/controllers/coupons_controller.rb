@@ -49,7 +49,8 @@ class CouponsController < ApplicationController
   # implement that later
   def index
     @title = "All coupons"
-    @coupons = Coupon.paginate(:page => params[:page], :per_page => 5)
+    @coupons = Coupon.all
+    #@coupons = Coupon.paginate :page => params[:page]
   end
 
   # this really shouldn't ever be called in production, since we want a 
@@ -70,8 +71,5 @@ class CouponsController < ApplicationController
 
   private
   
-  
-  
-
 
 end
