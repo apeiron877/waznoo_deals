@@ -6,9 +6,13 @@ namespace :db do
     Rake::Task['db:reset'].invoke
     admin = User.create!(:name => "admin",
                          :email => "admin@waznoodeals.com",
-                         :password => "foobar",
-                         :password_confirmation => "foobar")
+                         :password => "waz-admin",
+                         :password_confirmation => "waz-admin")
     admin.toggle!(:admin)
+    test_user = User.create!(:name => "test user",
+                         :email => "user@waznoodeals.com",
+                         :password => "waz-test",
+                         :password_confirmation => "waz-test")
     27.times do |n|
       name  = Faker::Name.name
       email = "example-#{n+1}@waznoodeals.org"
@@ -29,7 +33,7 @@ namespace :db do
     @deal_attr = { :name => "Default Deal!", 
 			  :price => 2500,
 			  :value => 4100,
-			  :starting_date => "01/26/2011",
+			  :starting_date => "02/11/2011",
 			  :days_available => 12,
 			  :num_available => 200,
 			  :num_purchased => 0,

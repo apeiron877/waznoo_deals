@@ -49,8 +49,12 @@ class CouponsController < ApplicationController
   # implement that later
   def index
     @title = "All coupons"
-    @coupons = Coupon.all
-    @coupons_pag = Coupon.paginate( :page => params[:page])
+    @coupons = Array.new
+    Coupon.find(:all, :order => "created_at").each do |item|
+      @coupons << item
+    end
+    #@coupons = Coupon.all.sort! { :created_at }
+    #@coupons_pag = Coupon.paginate( :page => params[:page])
   end
 
   # this really shouldn't ever be called in production, since we want a 
