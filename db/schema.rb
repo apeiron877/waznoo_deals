@@ -10,7 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110121235519) do
+ActiveRecord::Schema.define(:version => 20110205051214) do
+
+  create_table "coupons", :force => true do |t|
+    t.string   "name"
+    t.string   "company"
+    t.string   "expires_on"
+    t.string   "fine_print"
+    t.integer  "days_to_regen"
+    t.string   "redeemable_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_url"
+  end
+
+  add_index "coupons", ["id"], :name => "index_coupons_on_id"
 
   create_table "deals", :force => true do |t|
     t.string   "name"

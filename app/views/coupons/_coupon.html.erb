@@ -1,0 +1,25 @@
+<!--   link_to coupon.name, coupon_path  %>  change to a javascript print dialog
+  
+  
+
+<a href="images/stairs.jpg" rel="facebox">Facebox Popup</a>
+
+
+
+
+-->
+
+<div id="coupon"> 
+  <h3> <%= coupon.name %> </h3>
+  <%= link_to "Print this Coupon!", coupon.image_url, :class => "print_coupon_button round", :rel => "facebox", :title => "Print #{coupon.name}" %>
+  <%= image_tag(coupon.image_url, :size => "150x100", :class => "round", :alt => coupon.name) %>
+  <% if current_user.admin? %>
+  <%= link_to "edit", edit_coupon_path(:id => coupon.id),
+                                :title => "Edit #{coupon.name}" %>
+  <%= link_to "delete", coupon, :method => :delete, :confirm => "Delete this coupon?",
+                                :title => "Delete #{coupon.name}" %>
+  <%= coupon.id %>                              
+  <% end %>
+  <p> Expires: <%= coupon.expires_on %></p>
+ </div> 
+ 

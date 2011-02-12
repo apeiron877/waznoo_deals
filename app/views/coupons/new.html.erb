@@ -4,10 +4,13 @@ jQuery(document).ready(function($) {
 })
 </script>
 
-<%= form_for(@order) do |f| %>
-  <%= render 'shared/payment_form', :f => f %>
+
+<h1>Create a new coupon</h1>
+
+<%= form_for(@coupon) do |f| %>
+  <%= render 'fields', :f => f %>
   <div class="actions">
-    <%= f.submit "Buy!" %>
+    <%= f.submit "Create coupon" %>
   </div>
 <% end %>
 

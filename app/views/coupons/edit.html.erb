@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
 
 <h1>Edit deal</h1>
 
-<%= form_for(@deal) do |f| %>
+<%= form_for(@coupon, :html => { :class => "edit_post" }) do |f| %>
   <%= render 'fields', :f => f %>
   <div class="actions">
     <%= f.submit "Save changes" %>

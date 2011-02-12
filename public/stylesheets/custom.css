@@ -53,16 +53,16 @@
   text-decoration: none;  
 }
 
-
-
-
 #sidebar {
-  position: relative;
-  left: 10px;
+  display: hide;
+  position: fixed;
+  top: 120px;
+  right: 100px;
 }
 
 #sidebar ul li {
   border-left: 1px black solid;
+  border-right: 1px black solid;
   border-top: 1px black solid;
   border-bottom: 1px black solid;
   background-color: lightblue;
@@ -119,6 +119,20 @@
   border: 2px yellow;
 }
 
+button {
+  
+  color: white;	
+  font-size: 120%;
+  text-decoration: bold; 
+  text-align: center;
+  background-color: green;
+  width: 140px;
+  position: fixed;
+  top: 100px;
+  right: 100px;
+	}
+
+
 
 a.signup_button {
   margin-left: auto;
@@ -133,11 +147,76 @@ a.signup_button {
   padding: 20px;
 }
 
+a.print_coupon_button {
+  margin-left: 3px;
+  margin-right: 100px;
+  text-align: center;
+  width: 50px;
+  color: #fff;
+  background: lightgreen;
+  font-size: 120%;
+  font-weight: bold;
+  padding: 5px;
+}
+
+
 
 .round {
   -moz-border-radius:    10px;
   -webkit-border-radius: 10px;
   border-radius:         10px;
+}
+
+
+
+#coupon {
+  text-align: center;
+  width: 289px;
+  height: 210px;
+  border: 2px yellow solid;
+  background-color: white;
+  margin: 3px;
+  padding: 2px;
+}
+
+#coupon p {
+  text-align: center;
+  margin-bottom: 2px;
+}
+    
+
+/*CSS Sabrosus style pagination*/
+div.pagination {
+	margin:3px;
+	text-align:center;
+}
+
+div.pagination a {
+	padding: 2px 5px 2px 5px;
+	margin-right: 2px;
+	border: 1px solid #9aafe5;
+	
+	text-decoration: none; 
+	color: #2e6ab1;
+}
+div.pagination a:hover, div.pagination a:active {
+	border: 1px solid #2b66a5;
+	color: #000;
+	background-color: lightyellow;
+}
+div.pagination span.current {
+	padding: 2px 5px 2px 5px;
+	margin-right: 2px;
+	border: 1px solid navy;
+	font-weight: bold;
+	background-color: #2e6ab1;
+	color: #FFF;
+}
+div.pagination span.disabled {
+	padding: 2px 5px 2px 5px;
+	margin-right: 2px;
+	border: 1px solid #929292;
+	color: #929292;
 }
 
 

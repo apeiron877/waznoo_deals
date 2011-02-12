@@ -1,24 +1,19 @@
 class PagesController < ApplicationController
-  before_filter :must_be_signed_in, :only => [:buy]
 
   def home
 	@title = "Home"
-  end
-  
-  def coupons
-	@title = "Coupons"
   end
     
   def events
 	@title = "Events"
   end
   
-  def philosophy
-	@title = "Our Philosophy"
+  def about_us
+  	@title = "About Us"
   end
 
-  def how_it_works
-	@title = "How It Works"
+  def what_is_waznoo
+	@title = "What Is Waznoo?"
   end
 
   def previous_deals
