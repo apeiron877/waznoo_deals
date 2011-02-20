@@ -35,7 +35,9 @@ class User < ActiveRecord::Base
 	
 	before_save :encrypt_password
 	
-	
+	def can_use?(coupon)
+	  return (coupon.id % 4 != 0)
+	end
 	
 	def has_password?(submitted_password)
       encrypted_password == encrypt(submitted_password)

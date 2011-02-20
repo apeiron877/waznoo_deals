@@ -30,7 +30,7 @@ class CouponsController < ApplicationController
   # we want to show to current deal on the homepage by passing in
   # the current date
   def show
-    @coupon = Coupon.find(params[:id])
+    @coupon = Coupon.find_by_id(params[:id])
   end
 
   # the action of editing a deal, ie pushing a change to the database
@@ -64,16 +64,12 @@ class CouponsController < ApplicationController
     flash[:success] = "Coupon destroyed."
     redirect_to coupons_path
   end
-  
-  def print
-	@title = "Print coupon"
-	@coupon = Coupon.find_by_id(params[:id])
-	
-  end
-  
+    
   
 
   private
   
+  
+
 
 end

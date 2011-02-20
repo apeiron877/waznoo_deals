@@ -1,8 +1,43 @@
+body{
+  background-color: lightblue;
+}
+
 .container{
   background-color: white;
   border: 2px yellow solid;
 }	
 
+
+
+h2{
+  margin: 2px;
+  padding: 4px;
+}
+
+
+h3{
+  margin: 1px;
+  padding: 1px;
+}
+
+hr{
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.shadow {
+	width: 300px;
+	margin: 20px;
+	border: 1px solid #ccc;
+	padding: 10px;
+	}
+ 
+.shadow:hover {
+	-moz-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	}	
+	
 
 #logo {
   margin-top: 5px;
@@ -13,7 +48,7 @@
 }
 
 #top-buttons {
-  border: 1px red solid;
+  /*border: 1px red solid;*/
 }
 
 
@@ -50,6 +85,7 @@
   text-align: bottom;
   font-size: 125%;
   color: black;
+  display: block;
   text-decoration: none;  
 }
 
@@ -148,18 +184,23 @@ a.signup_button {
 }
 
 a.print_coupon_button {
-  margin-left: 3px;
-  margin-right: 100px;
-  text-align: center;
+  float: left;
   width: 50px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
   color: #fff;
   background: lightgreen;
   font-size: 120%;
   font-weight: bold;
-  padding: 5px;
+  padding: 9px;
+  text-decoration: none; 
 }
 
-
+.coupon_image {
+float: right;
+margin: 5px;
+}
 
 .round {
   -moz-border-radius:    10px;
@@ -173,8 +214,8 @@ a.print_coupon_button {
   text-align: center;
   width: 289px;
   height: 210px;
-  border: 2px yellow solid;
-  background-color: white;
+  border: 2px gray solid;
+  background-color: #eee;
   margin: 3px;
   padding: 2px;
 }

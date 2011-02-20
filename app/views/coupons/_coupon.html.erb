@@ -1,25 +1,56 @@
-<!--   link_to coupon.name, coupon_path  %>  change to a javascript print dialog
+
+
+
+<div id="coupon" class="shadow round"> 
+  <h3> <%= @coupon.name %> </h3>
+  <hr>
+  <div>
+  
+  <%= image_tag(coupon.image_url, :size => "175x125", :class => "coupon_image round",  :alt => coupon.name) %>
+  <% if current_user.can_use?(@coupon) %>
+    <%= link_to "Print this Coupon", coupon_path(@coupon, :format => :js), :remote => true, :class => "print_coupon_button round shadow", :rel => "facebox", :id => "print_coupon" %>
+  <% else %>
+  <h4> This coupon can be used again in 5 days! </h4>
+    <script type="text/javascript">  
+    $(document).ready(function(){   
+        $('#buttons-side').hide();     // Hide the sidebar  
+        $('#glow .progress').progressbar({animation: 'glow', autostart:true}); 
+    });
+    $.extend($.ui.progressbar.animations, {
+        glow: function(e, options) {
+            //  set the width to zero
+            $(e).css({opacity: '0.1', width:'0px'});
+            //  animate
+            var args = arguments;
+            $(e)
+                .animate({width: '50%'}, {duration: options.speed, queue:false})
+                .animate({opacity: '1.0'}, options.speed)
+                .queue(function(){
+                    $(this).width(0);
+                }).dequeue()
+                .animate({width: '50%'}, {duration: options.speed, queue:false})
+                .animate({opacity: '0.1'}, options.speed, function(){ args.callee.call(this, e, options); });
+        }                                	            	    
+    });    
+    </script>
+    
+  <div id="glow">
+            <div class="progress"></div>
+  </div> 
+  <% end %>
+  </div>
   
   
-
-<a href="images/stairs.jpg" rel="facebox">Facebox Popup</a>
-
-
-
-
--->
-
-<div id="coupon"> 
-  <h3> <%= coupon.name %> </h3>
-  <%= link_to "Print this Coupon!", coupon.image_url, :class => "print_coupon_button round", :rel => "facebox", :title => "Print #{coupon.name}" %>
-  <%= image_tag(coupon.image_url, :size => "150x100", :class => "round", :alt => coupon.name) %>
+  <hr>
+  <p>
   <% if current_user.admin? %>
   <%= link_to "edit", edit_coupon_path(:id => coupon.id),
                                 :title => "Edit #{coupon.name}" %>
   <%= link_to "delete", coupon, :method => :delete, :confirm => "Delete this coupon?",
-                                :title => "Delete #{coupon.name}" %>
-  <%= coupon.id %>                              
+                                :title => "Delete #{coupon.name}" %>                        
   <% end %>
-  <p> Expires: <%= coupon.expires_on %></p>
- </div> 
+  Expires: <%= coupon.expires_on %>
+  </p>
+</div> 
  
+

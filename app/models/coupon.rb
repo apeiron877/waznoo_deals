@@ -1,7 +1,6 @@
 class Coupon < ActiveRecord::Base
   attr_accessible :name, :company, :expires_on, :fine_print, :redeemable_at, :days_to_regen, :image_url
-  cattr_reader :per_page
-  @@per_page = 18
+  
   date_regex = /[0-1]{1}[0-9]{1}\/[0-3]{1}[0-9]{1}\/2[0-9]{3}/
   
   validates :name, :presence => true, :length => { :maximum => 140 }
@@ -13,5 +12,6 @@ class Coupon < ActiveRecord::Base
   validates :days_to_regen, :presence => true, :inclusion => { :in => 1..14}
   validates :image_url, :presence => true
 
+ 
 
 end

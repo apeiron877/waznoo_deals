@@ -1,17 +1,17 @@
-<script>
-jQuery(document).ready(function($) {
- 	$('#buttons-side').hide();     // Hide the sidebar
-})
-</script>
 
-<h1>All Coupons</h1>
+    
+<div>   
+<h2>Popular Coupons</h2>
+</div>        
+
   <table>
   <% counter = 0 %>
-  <% for i in 0..((@coupons.size / 3) - 1) do %>
+  <% for i in 0..4 do %>
 	<tr>
 	<% for j in 0..2 do %>
 		<td>
-		<%= render @coupons[counter] %>
+		<% @coupon = @coupons[counter] %>
+		<%= render @coupon %>
 		</td>
 		<% counter += 1 %>
    <% end %>
