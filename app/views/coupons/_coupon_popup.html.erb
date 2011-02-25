@@ -1,5 +1,5 @@
 <div id="coupon"> 
-  <h3> <%= @coupon.name %> </h3>
+  <h2> <%= @coupon.name %> </h2>
   <%= image_tag(@coupon.image_url, :size => "300x200", :class => "round", :alt => @coupon.name) %>
   <%= @coupon.id %>                             
   <p> Expires: <%= @coupon.expires_on %></p>

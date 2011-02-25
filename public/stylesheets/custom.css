@@ -202,6 +202,12 @@ float: right;
 margin: 5px;
 }
 
+.coupon-popup {
+float: right;
+margin: 5px;
+}
+
+
 .round {
   -moz-border-radius:    10px;
   -webkit-border-radius: 10px;

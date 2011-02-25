@@ -1,3 +1,21 @@
+# == Schema Information
+# Schema version: 20110224063515
+#
+# Table name: coupons
+#
+#  id            :integer         not null, primary key
+#  name          :string(255)
+#  company       :string(255)
+#  expires_on    :string(255)
+#  fine_print    :string(255)
+#  days_to_regen :integer
+#  redeemable_at :string(255)
+#  created_at    :datetime
+#  updated_at    :datetime
+#  image_url     :string(255)
+#  barcode_url   :string(255)
+#
+
 class Coupon < ActiveRecord::Base
   attr_accessible :name, :company, :expires_on, :fine_print, :redeemable_at, :days_to_regen, :image_url
   
@@ -11,7 +29,7 @@ class Coupon < ActiveRecord::Base
   validates :fine_print, :presence => true, :length => { :maximum => 500 }
   validates :days_to_regen, :presence => true, :inclusion => { :in => 1..14}
   validates :image_url, :presence => true
-
+  validates :barcode_url, :presence => true
  
 
 end

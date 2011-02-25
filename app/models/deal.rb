@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110115032915
+# Schema version: 20110224063515
 #
 # Table name: deals
 #
@@ -13,7 +13,7 @@
 #  num_purchased        :integer
 #  num_needed_to_unlock :integer
 #  blurb                :string(255)
-#  expires              :integer
+#  expires              :string(255)
 #  company              :string(255)
 #  location             :string(255)
 #  created_at           :datetime

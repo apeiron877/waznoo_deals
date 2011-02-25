@@ -1,3 +1,14 @@
-  <%= @coupon.name %>
-  <%= image_tag(@coupon.image_url, :size => "300x200", :class => "round", :alt => @coupon.name) %>
-
+<div id="coupon-popup"> 
+  <h2> <%= @coupon.name %> </h2>
+  <hr>
+  <%= link_to_function("Print this Page", "javascript:print()") %>
+  <%= image_tag(@coupon.image_url, :size => "300x200", :alt => @coupon.name) %>
+  <p> <%= @coupon.fine_print %> </p>
+  <hr>
+  <div>
+  <%= image_tag(@coupon.barcode_url, :class => "coupon_image", :size => "152x59") %>                         
+  </div>
+  <p> Expires: <%= @coupon.expires_on %></p>
+  
+</div> 
+ 

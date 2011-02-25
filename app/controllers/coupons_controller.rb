@@ -1,6 +1,6 @@
 class CouponsController < ApplicationController
   before_filter :must_be_signed_in
-  before_filter :must_be_admin_user, :except => :index
+  before_filter :must_be_admin_user, :except => [:index, :show]
   
   
   # show the page for creating a deal
@@ -31,6 +31,9 @@ class CouponsController < ApplicationController
   # the current date
   def show
     @coupon = Coupon.find_by_id(params[:id])
+    if not current_user.can_use?(@coupon)
+      @coupon = nil
+      end
   end
 
   # the action of editing a deal, ie pushing a change to the database

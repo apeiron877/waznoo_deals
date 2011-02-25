@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110205051214) do
+ActiveRecord::Schema.define(:version => 20110224063515) do
 
   create_table "coupons", :force => true do |t|
     t.string   "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20110205051214) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_url"
+    t.string   "barcode_url"
   end
 
   add_index "coupons", ["id"], :name => "index_coupons_on_id"
