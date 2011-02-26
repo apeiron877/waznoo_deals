@@ -4,7 +4,7 @@ body{
 
 .container{
   background-color: white;
-  border: 2px yellow solid;
+ /* border: 2px yellow solid;*/
 }	
 
 
@@ -42,7 +42,7 @@ hr{
 #logo {
   margin-top: 5px;
   background-color: pink;
-  border: 1px red solid;
+ /* border: 1px red solid; */
   font-size: 120%;
   font-family: Helvetica, Arial;
 }
