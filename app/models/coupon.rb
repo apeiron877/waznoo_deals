@@ -30,6 +30,7 @@ class Coupon < ActiveRecord::Base
   validates :days_to_regen, :presence => true, :inclusion => { :in => 1..14}
   validates :image_url, :presence => true
   validates :barcode_url, :presence => true
- 
-
+  
+  has_many :users, :through => :used_coupons, :source => "user_id"
+  
 end

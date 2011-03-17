@@ -1,16 +1,16 @@
 
-
-
+<% admin = current_user.admin? %>
 <div id="coupon" class="shadow round"> 
   <h3> <%= @coupon.name %> </h3>
   <hr>
   <div>
   
   <%= image_tag(coupon.image_url, :size => "175x125", :class => "coupon_image round",  :alt => coupon.name) %>
-  <% if current_user.can_use?(@coupon) %>
+  <% wait = current_user.days_until_available(@coupon) %>
+  <% if wait < 1 %>
     <%= link_to "Print this Coupon", coupon_path(@coupon, :format => :js), :remote => true, :class => "print_coupon_button round shadow", :rel => "facebox", :id => "print_coupon" %>
   <% else %>
-  <h4> This coupon can be used again in 5 days! </h4>
+  <h4> This coupon can be used again in <%= wait %> days! </h4>
     <script type="text/javascript">  
     $(document).ready(function(){   
         $('#buttons-side').hide();     // Hide the sidebar  
@@ -39,7 +39,6 @@
   </div> 
   <% end %>
   </div>
-  
   
   <hr>
   <p>

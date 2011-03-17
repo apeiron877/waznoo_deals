@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
 	attr_accessor :password
     attr_accessible :name, :email, :password, :password_confirmation
     has_one :order
+    has_many :used_coupons, :foreign_key => "user_id",
+                            :dependent => :destroy
+    has_many :coupons, :through => :used_coupons, :source => "coupon_id"
+    
 	
 	email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -35,10 +39,6 @@ class User < ActiveRecord::Base
 	
 	before_save :encrypt_password
 	
-	def can_use?(coupon)
-	  return coupon.id != 7
-	end
-	
 	def has_password?(submitted_password)
       encrypted_password == encrypt(submitted_password)
     end
@@ -52,11 +52,35 @@ class User < ActiveRecord::Base
 	def self.authenticate_with_salt(id, cookie_salt)
     user = find_by_id(id)
     (user && user.salt == cookie_salt) ? user : nil
-  end
+    end
+
+
+   def days_until_available(coupon)
+      # check if the current user has used the coupon before,
+      # and save the most recent one
+     
+      used_coupon = used_coupons.where(:coupon_id => coupon.id).last
+	  if used_coupon == nil
+		return 0 # coupon is available
+      else
+        regen = coupon.days_to_regen
+	    used_on = used_coupon.created_at.to_datetime
+	    return ((used_on+regen) - Date.today).to_i
+	  end
+    end		
+
+
+    def use_coupon!(coupon)
+      used_coupons.create!(:coupon_id => coupon.id)
+    end
+
+
 
 
 	private
 
+	 
+    
     def encrypt_password
       self.salt = make_salt if new_record?
       self.encrypted_password = encrypt(password)

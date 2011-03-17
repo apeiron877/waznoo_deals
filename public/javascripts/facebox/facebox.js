@@ -304,6 +304,7 @@
       $(document).trigger('afterClose.facebox')
     })
     hideOverlay()
+    location.reload()
   })
 
 })(jQuery);

@@ -70,6 +70,12 @@ module SessionsHelper
     @current_user ||= user_from_remember_token
   end 		
   		
+  		
+
+  		
+  		
+  		
+  		
   private
 
     def user_from_remember_token
